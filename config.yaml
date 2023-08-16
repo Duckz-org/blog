@@ -48,6 +48,9 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
 
+  assets:
+    favicon: "https://duckz.org/assets/logos/logo.webp"
+
   socialIcons:
     - name: github
       url: "https://github.com/duckz-org"

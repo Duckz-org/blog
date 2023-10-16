@@ -36,6 +36,32 @@
   {{- end }}
 
   <footer class="post-footer">
+
+    {{- if or .Params.author site.Params.author }}
+    <ul class="post-tags">
+    {{- $author := (.Params.author | default site.Params.author) }}
+    {{- $author_type := (printf "%T" $author) }}
+    {{- if (or (eq $author_type "[]string") (eq $author_type "[]interface {}")) }}
+    {{- range ($author) }}
+    {{- if (eq . "status-quo") }}
+    <li><img title="status-quo" src="https://www.hackthebox.com/badge/image/431905" /></li>
+    {{- end }}
+    {{- if (eq . "DaanBreur") }}
+    <li><img title="DaanBreur" src="https://www.hackthebox.com/badge/image/317890" /></li>
+    {{- end }}
+    {{- if (eq . "sethboy") }}
+    <li><img title="sethboy" src="https://www.hackthebox.com/badge/image/1525345" /></li>
+    {{- end }}
+    {{- if (eq . "notSelwyn") }}
+    <li><img title="notselwyn" src="https://www.hackthebox.com/badge/image/500469" /></li>
+    {{- end }}
+    {{- end }}
+    {{- else }}
+    {{- $author }}
+    {{- end }}
+    </ul>
+    {{- end -}}
+
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     <ul class="post-tags">
       {{- range ($.GetTerms $tags) }}

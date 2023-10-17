@@ -1,0 +1,27 @@
+{{- if or .Params.author site.Params.author }}
+<ul class="post-tags">
+  {{- $author := (.Params.author | default site.Params.author) }}
+  {{- $author_type := (printf "%T" $author) }}
+  {{- if (or (eq $author_type "[]string") (eq $author_type "[]interface {}")) }}
+    {{- range $author -}}
+      {{ $username := . }}
+      {{ $exists := false }}
+      {{ $index := -1 }}
+      {{- range $i, $item := $.Site.Params.htbIds -}}
+          {{- if eq $item.username $username -}}
+              {{ $exists = true }}
+              {{ $index = $i }}
+          {{- end -}}
+      {{- end -}}
+      {{- if $exists -}}
+        {{ $author_object := index $.Site.Params.htbIds $index }}
+        <li><img title="{{ $author_object.username }}" src="https://www.hackthebox.com/badge/image/{{ $author_object.id }}" /></li>
+      {{- end -}}
+    {{- end -}}
+  {{- else }}
+    {{- if (eq $author "Us") }}
+      <li><img title="Ducks" src="https://www.hackthebox.com/badge/team/image/{{ site.Params.htbTeamId }}" /></li>
+    {{- end }}
+  {{- end }}
+</ul>
+{{- end -}}

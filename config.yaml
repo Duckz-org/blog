@@ -18,6 +18,7 @@ params:
   description: "Cheesing CTF challenges across the world."
   keywords: [Blog, Cybersecurity, Hacking, Programming, HackTheBox]
   author: Us
+  htbTeamId: 5313
 
   DateFormat: "January 2, 2006"
 
@@ -58,6 +59,16 @@ params:
       url: "https://app.hackthebox.com/teams/overview/5313"
     - name: ctftime
       url: "https://ctftime.org/team/228090"
+
+  htbIds:
+    - username: status-quo
+      id: 431905
+    - username: DaanBreur
+      id: 317890
+    - username: sethboy
+      id: 1525345
+    - username: notSelwyn
+      id: 500469
 
   cover:
     hidden: true # hide everywhere but not in structured data

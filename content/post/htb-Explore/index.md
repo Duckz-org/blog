@@ -1,5 +1,6 @@
 ---
 title: "HackTheBox | Explore"
+description: Since this was the only android box. I wanted to pwn it. ~status-quo
 date: "2023-10-16T00:00:00Z"
 tags: [hackthebox, android, metasploit, explore]
 categories: [HackTheBox]

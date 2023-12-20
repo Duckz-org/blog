@@ -1,11 +1,8 @@
 ---
 title: "The Cyber Cooperative CTF 2023 | The Movie Blog"
-# description: Since this was the only android box. I wanted to pwn it. ~status-quo
 date: "2023-12-18T00:00:00Z"
 tags: [web, golang]
 categories: [CTF, The Cyber Cooperative CTF 2023]
-# cover:
-#   image: "/assets/HTB/Explore/infopanel.png"
 author: [status-quo, DaanBreur, TechnologyNick]
 points: 500
 solves: 20
